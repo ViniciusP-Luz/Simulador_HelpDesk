@@ -1,14 +1,18 @@
 package Tickets;
 
+import Usuarios.UsuarioRepository;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Ticket {
-    int idTicket;
+    final int idTicket;
     int requisitante;
     int prioridade;
     String descricao;
     ArrayList<String> mensagens = new ArrayList<>();
+    TicketRepository ticketRepository = new TicketRepository();
+    UsuarioRepository usuarioRepository = new UsuarioRepository();
     LocalDate dataCriacao;
     String situacao;
     int aux = 1;
@@ -31,7 +35,7 @@ public class Ticket {
 
     public void setResponsavel(int responsavel) {
         if(this.responsavel != 0){
-            //System.out.printf("O %S já é responsável por esse chamado",);
+            System.out.printf("O %S já é responsável por esse chamado",usuarioRepository.getUsuarioHash(ticketRepository.getTicket(responsavel).responsavel));
             return;
         }
         this.responsavel = responsavel;

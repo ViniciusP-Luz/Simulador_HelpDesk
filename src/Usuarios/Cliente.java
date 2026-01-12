@@ -9,7 +9,7 @@ public class Cliente extends Usuario {
 
     private void CriaTicket(int prioridade,String descricao,String mensagem) {
 
-        Ticket tickets = new Ticket(this.idUsuario,prioridade,descricao,mensagem);
+        Ticket tickets = new Ticket(this.getIdUsuario(),prioridade,descricao,mensagem);
     }
 
 }
