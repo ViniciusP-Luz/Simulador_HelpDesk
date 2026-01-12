@@ -11,20 +11,19 @@ public class Ticket {
     int prioridade;
     String descricao;
     ArrayList<String> mensagens = new ArrayList<>();
-    TicketRepository ticketRepository = new TicketRepository();
     UsuarioRepository usuarioRepository = new UsuarioRepository();
     LocalDate dataCriacao;
     String situacao;
-    int aux = 1;
+    static int aux = 1;
     int responsavel;
 
-    public Ticket(int requisitante, int prioridade, String descricao, String mensagem) {
+    public Ticket(int requisitante, String descricao, String mensagem) {
         this.requisitante = requisitante;
-        this.prioridade = prioridade;
         this.descricao = descricao;
+        this.responsavel = 0;
         mensagens.add(mensagem);
         this.idTicket = aux;
-        aux+=1;
+        aux++;
         this.dataCriacao = LocalDate.now();
 
     }
@@ -33,12 +32,13 @@ public class Ticket {
         return responsavel;
     }
 
-    public void setResponsavel(int responsavel) {
-        if(this.responsavel != 0){
-            System.out.printf("O %S já é responsável por esse chamado",usuarioRepository.getUsuarioHash(ticketRepository.getTicket(responsavel).responsavel));
-            return;
+    public void setResponsavel(int responsavel, String nome) {
+        if(this.responsavel== 0) {
+            this.responsavel = responsavel;
+            System.out.printf("Agora o ticket %d, pertence ao atendente %s",this.idTicket,nome);
         }
-        this.responsavel = responsavel;
+        else System.out.println("Ticket pertence à outro atendente");
+
     }
 
     public int getId() {

@@ -5,14 +5,19 @@ import Tickets.Ticket;
 public abstract class Usuario {
 
     private final int idUsuario;
+
+    public String getNome() {
+        return nome;
+    }
+
     String nome;
-    int aux = 1;
+    static int aux = 1;
     int funcao; // 0 = Atendente; 1 = cliente;
 
     protected Usuario(String nome) {
         this.nome = nome;
         this.idUsuario = aux;
-        aux+=1;
+        aux++;
 
     }
 
@@ -27,3 +32,4 @@ public abstract class Usuario {
     }
 
 }
+
