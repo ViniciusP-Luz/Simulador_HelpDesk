@@ -1,6 +1,6 @@
 package Usuarios;
 import Tickets.Ticket;
-import static Tickets.TicketRepository.adcionaTicketHash;
+import static Repositories.TicketRepository.adcionaTicketHash;
 
 public class Cliente extends Usuario {
 
@@ -12,6 +12,7 @@ public class Cliente extends Usuario {
 
         Ticket tickets = new Ticket(this.getIdUsuario(),descricao,mensagem);
         adcionaTicketHash(tickets);
+        System.out.println("CRIADO");
     }
 
 
