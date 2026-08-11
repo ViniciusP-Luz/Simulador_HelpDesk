@@ -1,7 +1,5 @@
 # Simulador HelpDesk 💻🎧
 
-![Status do Projeto](https://img.shields.io/badge/Status-Concluído-green)
-
 Um simulador interativo de HelpDesk focado em gerenciar, triar e solucionar chamados de suporte técnico de forma eficiente. Este projeto foi desenvolvido para demonstrar fluxos reais de atendimento, desde a abertura de um ticket até sua resolução, aplicando sólidas práticas de engenharia de software e regras de negócio de suporte.
 
 ## 🎯 O Problema que Resolve
