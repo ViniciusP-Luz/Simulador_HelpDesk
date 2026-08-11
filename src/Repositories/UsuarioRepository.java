@@ -1,4 +1,6 @@
-package Usuarios;
+package Repositories;
+import Usuarios.Usuario;
+
 import java.util.HashMap;
 import java.util.Map;
 

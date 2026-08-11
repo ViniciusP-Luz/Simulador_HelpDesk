@@ -1,6 +1,6 @@
 package Tickets;
 
-import Usuarios.UsuarioRepository;
+import Repositories.UsuarioRepository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class Ticket {
     public void setResponsavel(int responsavel, String nome) {
         if(this.responsavel== 0) {
             this.responsavel = responsavel;
-            System.out.printf("Agora o ticket %d, pertence ao atendente %s",this.idTicket,nome);
+            System.out.printf("Agora o ticket %d, pertence ao atendente %s\n",this.idTicket,nome);
         }
         else System.out.println("Ticket pertence à outro atendente");
 
@@ -93,4 +93,18 @@ public class Ticket {
         this.situacao = situacao;
     }
 
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "idTicket=" + idTicket +
+                ", requisitante=" + requisitante +
+                ", prioridade=" + prioridade +
+                ", descricao='" + descricao + '\'' +
+                ", mensagens=" + mensagens +
+                ", usuarioRepository=" + usuarioRepository +
+                ", dataCriacao=" + dataCriacao +
+                ", situacao='" + situacao + '\'' +
+                ", responsavel=" + responsavel +
+                '}';
+    }
 }
